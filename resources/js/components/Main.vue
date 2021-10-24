@@ -54,8 +54,8 @@
 
         <div class="page__row page__row_border">
             <div class="page__col">
-                <div class="products__grid">
-                    <div class="products__item" @click="openMusicModal" v-if="!mobile">
+                <div class="products-list__grid">
+                    <div class="products-list__item" @click="openMusicModal" v-if="!mobile">
                         <div class="products__preview new"></div>
                         <div class="products__details">
                             <div class="products__title title">Добавить трек</div>
@@ -71,7 +71,7 @@
                     <div class="products-list__item" @click="openMusicModal" v-if="!mobile">
                         <div class="products__preview new"></div>
                         <div class="products__details">
-                            <div class="products__title title">Добавить трек</div>
+                            <div class="products__title title">Тут песня</div>
                         </div>
                     </div>
                 </div>
