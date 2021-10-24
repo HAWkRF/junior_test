@@ -80,6 +80,22 @@
                 </div>
             </div>
         </b-modal>
+
+        <b-modal id="music-modal-find" centered hide-footer>
+            <div class="modal-center d-flex flex-column text-center mx-auto">
+                <div class="form-block-find">
+                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
+                    <input type="text" class="form-control" placeholder="Название трека" required="" />
+                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="nickname" required="" />
+                    <input type="text" class="form-control" placeholder="Альбом трека" required="" />
+                    <button>Добавить</button>
+                    <!-- <p class="form-tip text-danger" v-if="error" v-html="error" /> -->
+                    <!-- <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Найти трек' : 'Введите ссылку на трек'" /> -->
+                    <!-- <div class="loading" :class="{active: waiting}" /> -->
+                    <!-- <p class="form-tip" v-if="waiting" v-html="'Ищем трек, это займет от 5 до 10 секунд'" /> -->
+                </div>
+            </div>
+        </b-modal>
     </div>
 </template>
 
@@ -100,6 +116,11 @@
                 error: null,
                 waiting: false,
                 items: null,
+
+                music: {},
+                title: null,
+                nickname: null,
+
             }
         },
 
@@ -117,6 +138,21 @@
                 this.$bvModal.show('music-modal');
             },
 
+            closeMusicModal () {
+                this.waiting = this.error = false;
+                this.$bvModal.hide('music-modal');
+            },
+
+            openMusicFindModal() {
+                this.waiting = this.error = false;
+                this.$bvModal.show('music-modal-find');
+            },
+
+            closeMusicFindModal() {
+                this.waiting = this.error = false;
+                this.$bvModal.hide('music-modal-find');
+            },
+
             getMusicList() {
                 axios.get(GET_MUSIC_LIST).then(response => {
                     this.items = response.data;
@@ -132,6 +168,13 @@
 
                     /* TO DO */
                     console.log(response);
+                    this.music = response.data.music;
+                    this.title = response.data.music.title;
+                    this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').split(' ').join('');
+
+                    console.log(this.title);
+                    console.log(this.nickname);
+
 
                     this.error = null;
                 }).catch(error => {
@@ -141,6 +184,15 @@
                         this.error = 'Не удалось найти трек, попробуйте еще раз';
                     }
                 });
+            },
+
+            getMusicInfo(url) {
+                axios.get(GET_MUSIC, {url: url}).then(response => {
+                   
+                    // this.items = response.data;
+                    // this.title = items.music.title;
+                    // this.nickname = items.music.authorName;
+                })
             }
         }
 
