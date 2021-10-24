@@ -69,7 +69,7 @@
             <div class="page__col">
                 <div class="products-list__grid">
                     <div class="products-list__item" v-if="!mobile">
-                        <div class="products__preview new"></div>
+                        <div class="products-list__preview new"></div>
                         <div class="products-list__details">
                             <div class="products__title">Тут песня</div>
                         </div>
@@ -95,6 +95,10 @@
                 error: null,
                 waiting: false,
                 items: null,
+
+                title: null, // название песни
+                nickname: null, // songer
+                iconSong: null, // картинка
             }
         },
         mounted() {
@@ -113,22 +117,6 @@
                     this.items = response.data;
                 });
             },
-            getMusic(url) {
-                this.waiting = true;
-                this.error = null;
-                axios.post(GET_MUSIC, {url: url}).then(response => {
-                    this.waiting = false;
-                    /* TO DO */
-                    console.log(response);
-                    this.error = null;
-                }).catch(error => {
-                    console.log(error);
-                    this.waiting = false;
-                    if(error !== undefined) {
-                        this.error = 'Не удалось найти трек, попробуйте еще раз';
-                    }
-                });
-            }
         }
     }
 </script>
