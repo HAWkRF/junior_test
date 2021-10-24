@@ -85,10 +85,10 @@
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block-find">
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
-                    <input type="text" class="form-control" placeholder="Название трека" required="" />
-                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="nickname" required="" />
-                    <input type="text" class="form-control" placeholder="Альбом трека" required="" />
-                    <button>Добавить</button>
+                    <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required="" />
+                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required="" />
+                    <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" required="" />
+                    <button class="btn btn-lg btn-primary btn-block my-4">Добавить</button>
                     <!-- <p class="form-tip text-danger" v-if="error" v-html="error" /> -->
                     <!-- <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Найти трек' : 'Введите ссылку на трек'" /> -->
                     <!-- <div class="loading" :class="{active: waiting}" /> -->
@@ -120,6 +120,7 @@
                 music: {},
                 title: null,
                 nickname: null,
+                album: null,
 
             }
         },
@@ -138,7 +139,7 @@
                 this.$bvModal.show('music-modal');
             },
 
-            closeMusicModal () {
+            closeMusicModal() {
                 this.waiting = this.error = false;
                 this.$bvModal.hide('music-modal');
             },
@@ -167,14 +168,13 @@
                     this.waiting = false;
 
                     /* TO DO */
+                    this.closeMusicModal();
+                    this.openMusicFindModal();
                     console.log(response);
                     this.music = response.data.music;
                     this.title = response.data.music.title;
-                    this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').split(' ').join('');
-
-                    console.log(this.title);
-                    console.log(this.nickname);
-
+                    this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
+                    this.album = response.data.music.album;
 
                     this.error = null;
                 }).catch(error => {
