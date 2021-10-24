@@ -10680,6 +10680,26 @@ body.dark .sidebar.active .sidebar__burger {
     transition: 0.5s;
 }
 
+.products-list__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.products-list__grid .products-list__item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 0 9px 18px;
+    width: calc(50% - 18px);
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+    transition: 0.5s;
+    width: 374px;
+    height: 94px;
+}
+
 @media only screen and (max-width: 767px) {
     .products__grid .products__item {
         margin: 0 0 18px;

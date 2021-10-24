@@ -65,6 +65,19 @@
             </div>
         </div>
 
+        <div class="page__row page__row_border">
+            <div class="page__col">
+                <div class="products-list__grid">
+                    <div class="products-list__item" @click="openMusicModal" v-if="!mobile">
+                        <div class="products__preview new"></div>
+                        <div class="products__details">
+                            <div class="products__title title">Добавить трек</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <b-modal id="music-modal" centered hide-footer>
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block">
