@@ -57,7 +57,7 @@
                 <div class="products-list__grid">
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview new"></div>
-                        <div class="products__details">
+                        <div class="products-list__details">
                             <div class="products__title title">Добавить трек</div>
                         </div>
                     </div>
@@ -70,25 +70,13 @@
                 <div class="products-list__grid">
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products__preview new"></div>
-                        <div class="products__details">
-                            <div class="products__title title">Тут песня</div>
+                        <div class="products-list__details">
+                            <div class="products__title">Тут песня</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <b-modal id="music-modal" centered hide-footer>
-            <div class="modal-center d-flex flex-column text-center mx-auto">
-                <div class="form-block">
-                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
-                    <p class="form-tip text-danger" v-if="error" v-html="error" />
-                    <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Найти трек' : 'Введите ссылку на трек'" />
-                    <div class="loading" :class="{active: waiting}" />
-                    <p class="form-tip" v-if="waiting" v-html="'Ищем трек, это займет от 5 до 10 секунд'" />
-                </div>
-            </div>
-        </b-modal>
     </div>
 </template>
 

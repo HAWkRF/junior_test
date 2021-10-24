@@ -10929,6 +10929,10 @@ body.dark .products__row_head {
     padding-left: 15px;
 }
 
+.products-list__details {
+    padding-left: 15px;
+}
+
 .products__cell .products__title {
     margin-bottom: 9px;
     color: #808191;
