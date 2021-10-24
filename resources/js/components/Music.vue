@@ -185,14 +185,18 @@
                 });
             },
 
-            getMusicInfo(url) {
-                axios.get(GET_MUSIC, {url: url}).then(response => {
-                   
-                    // this.items = response.data;
-                    // this.title = items.music.title;
-                    // this.nickname = items.music.authorName;
-                })
-            }
+            addMusic () {
+                 axios.post(GET_MUSIC, {url: url}).then(response => {
+                    this.waiting = false;
+                    this.error = null;
+                 }).catch (error => {
+                    console.log(error);
+                    this.waiting = false;
+                    if(error !== undefined) {
+                        this.error = 'Не удалось добавить трек, попробуйте еще раз';
+                    }
+                });
+            },
         }
 
     }
