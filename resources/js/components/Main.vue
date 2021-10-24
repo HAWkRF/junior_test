@@ -69,7 +69,7 @@
             <div class="page__col">
                 <div class="products-list__grid">
                     <div class="products-list__item" v-if="!mobile">
-                        <div class="products-list__preview new"></div>
+                        <div class="products-list__preview"></div>
                         <div class="products-list__details">
                             <div class="products__title">Тут песня</div>
                         </div>
