@@ -115,10 +115,10 @@
                 items: null,
 
                 music: {},
-                title: null,
-                nickname: null,
-                album: null,
-                iconSong:null,
+                title: null, // название песни
+                nickname: null, // songer
+                album: null, // альбом
+                iconSong: null, // картинка
 
             }
         },
@@ -186,7 +186,13 @@
             },
 
             addMusic () {
-                 axios.post(GET_MUSIC, {url: url}).then(response => {
+                 axios.post(ADD_MUSIC, {
+                     title: this.title,
+                     author: this.nickname,
+                     album: this.album,
+                     image: this.iconSong
+                     
+                     }).then(response => {
                     this.waiting = false;
                     this.error = null;
                  }).catch (error => {
