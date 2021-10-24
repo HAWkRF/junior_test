@@ -89,7 +89,7 @@
                     <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required="" />
                     <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required="" />
                     <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" required="" />
-                    <button class="btn btn-lg btn-primary btn-block my-4">Добавить</button>
+                    <button class="btn btn-lg btn-primary btn-block my-4" @click="addMusic(title, nickname, album, iconSong, val)">Добавить</button>
                 </div>
             </div>
         </b-modal>
@@ -190,11 +190,14 @@
                      title: this.title,
                      author: this.nickname,
                      album: this.album,
-                     image: this.iconSong
-                     
+                     image: this.iconSong,
+                     url: this.val
                      }).then(response => {
+
                     this.waiting = false;
                     this.error = null;
+                    this.closeMusicFindModal();
+                    
                  }).catch (error => {
                     console.log(error);
                     this.waiting = false;
