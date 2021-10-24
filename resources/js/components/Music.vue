@@ -83,16 +83,13 @@
 
         <b-modal id="music-modal-find" centered hide-footer>
             <div class="modal-center d-flex flex-column text-center mx-auto">
-                <div class="form-block-find">
+                <div class="form-block">
+                    <img class="imgSong" :src="this.iconSong"/>
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
                     <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required="" />
                     <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required="" />
                     <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" required="" />
                     <button class="btn btn-lg btn-primary btn-block my-4">Добавить</button>
-                    <!-- <p class="form-tip text-danger" v-if="error" v-html="error" /> -->
-                    <!-- <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Найти трек' : 'Введите ссылку на трек'" /> -->
-                    <!-- <div class="loading" :class="{active: waiting}" /> -->
-                    <!-- <p class="form-tip" v-if="waiting" v-html="'Ищем трек, это займет от 5 до 10 секунд'" /> -->
                 </div>
             </div>
         </b-modal>
@@ -121,6 +118,7 @@
                 title: null,
                 nickname: null,
                 album: null,
+                iconSong:null,
 
             }
         },
@@ -175,6 +173,7 @@
                     this.title = response.data.music.title;
                     this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
                     this.album = response.data.music.album;
+                    this.iconSong = response.data.music.coverMedium;
 
                     this.error = null;
                 }).catch(error => {
