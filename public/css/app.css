@@ -10956,7 +10956,7 @@ body.dark .products__row_head {
     border-radius: 15px;
 }
 
-.products__preview.new {
+.products__preview .new {
     background: no-repeat url("../img/add_track.svg") center/contain;
 }
 
@@ -10978,6 +10978,10 @@ body.dark .products__row_head {
 .products-list__preview>img {
     overflow: hidden;
     border-radius: 15px;
+}
+
+.products-list__preview .new {
+    background: no-repeat url("../img/add_track.svg") center/contain;
 }
 
 .products__details {
