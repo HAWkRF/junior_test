@@ -94,7 +94,7 @@
                 music: null,
                 error: null,
                 waiting: false,
-                items: null,
+                items: null, // песни
 
                 title: null, // название песни
                 nickname: null, // songer
