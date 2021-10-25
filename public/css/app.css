@@ -10720,6 +10720,8 @@ body.dark .sidebar.active .sidebar__burger {
     height: 47px;
     background: #6C5DD3;
     border-radius: 12px;
+    margin-top: 175px;
+    margin-left: -650px;
 }
 
 .products-list__grid .products-list__item .products-list__title {
@@ -10781,6 +10783,16 @@ body.dark .products__grid .products__item {
 
 .products>.products__title {
     margin-bottom: 16px;
+}
+
+.products__banner .products__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFF;
+    margin-left: -60px;
 }
 
 .products-list>.products__title {
