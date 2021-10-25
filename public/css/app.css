@@ -10712,7 +10712,13 @@ body.dark .sidebar.active .sidebar__burger {
 }
 
 .products-list__grid .products-list__item .products-list__title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
     font-size: 19px;
+    line-height: 23px;
+    color: #808191;
+    margin-top: -55px;
 }
 
 .products-list__grid .products-list__item .products-list__songer {
@@ -10727,7 +10733,7 @@ body.dark .sidebar.active .sidebar__burger {
     order: 0;
     flex-grow: 0;
     margin-top: -60px;
-    margin-left: 95px;
+    margin-left: 75px;
 }
 
 .products-list__grid .products-list__item .products-list__song_title {
@@ -10740,8 +10746,16 @@ body.dark .sidebar.active .sidebar__burger {
     order: 1;
     flex-grow: 0;
     color: #808191;
-    margin-left: 95px;
+    margin-left: 75px;
     margin-top: -15px;
+}
+
+.products-list__grid .products-list__item .products-list__songer-icon {
+    width: 63px;
+    height: 63px;
+    border-radius: 150px;
+    margin-top: -110px;
+    margin-left: 5px;
 }
 
 body.dark .products__grid .products__item {

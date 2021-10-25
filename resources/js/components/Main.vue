@@ -58,7 +58,7 @@
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview new"></div>
                         <div class="products-list__details">
-                            <div class="products-list__title title">Добавить трек</div>
+                            <div class="products-list__title">Добавить трек</div>
                         </div>
                     </div>
                 </div>
@@ -73,6 +73,7 @@
                         <div class="products-list__details">
                             <p class="products-list__songer">{{ item.author }}</p>
                             <p class="products-list__song_title">{{ item.title }}</p>
+                            <img :src="item.image" class="products-list__songer-icon"/>
                         </div>
                     </div>
                 </div>
