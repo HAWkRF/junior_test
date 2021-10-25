@@ -71,7 +71,7 @@
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview"></div>
                         <div class="products-list__details">
-                            <div class="products-list__title">Тут песня</div>
+                            <div class="products-list__songer">Songer</div>
                         </div>
                     </div>
                 </div>
