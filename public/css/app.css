@@ -10711,6 +10711,17 @@ body.dark .sidebar.active .sidebar__burger {
     font-size: 19px;
 }
 
+.products__grid .products__banner_add_track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 13px;
+    width: 163px;
+    height: 47px;
+    background: #6C5DD3;
+    border-radius: 12px;
+}
+
 .products-list__grid .products-list__item .products-list__title {
     font-family: Inter;
     font-style: normal;
