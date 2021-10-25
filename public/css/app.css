@@ -10723,8 +10723,25 @@ body.dark .sidebar.active .sidebar__burger {
     font-size: 19px;
     line-height: 23px;
     color: #808191;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
     margin-top: -60px;
     margin-left: 95px;
+}
+
+.products-list__grid .products-list__item .products-list__song_title {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 18px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color: #808191;
+    margin-left: 95px;
+    margin-top: -15px;
 }
 
 body.dark .products__grid .products__item {

@@ -71,7 +71,8 @@
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview"></div>
                         <div class="products-list__details">
-                            <div class="products-list__songer">Songer</div>
+                            <p class="products-list__songer">Songer</p>
+                            <p class="products-list__song_title">Title</p>
                         </div>
                     </div>
                 </div>
