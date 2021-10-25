@@ -68,11 +68,11 @@
         <div class="page__row page__row_border">
             <div class="page__col">
                 <div class="products-list__grid">
-                    <div class="products-list__item" v-if="!mobile">
+                    <div class="products-list__item" v-for="item in items" :key="item.id" v-if="!mobile">
                         <div class="products-list__preview"></div>
                         <div class="products-list__details">
-                            <p class="products-list__songer">Songer</p>
-                            <p class="products-list__song_title">Title</p>
+                            <p class="products-list__songer">{{ item.author }}</p>
+                            <p class="products-list__song_title">{{ item.title }}</p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                 music: null,
                 error: null,
                 waiting: false,
-                items: null, // песни
+                items: [], // песни
 
                 title: null, // название песни
                 nickname: null, // songer
