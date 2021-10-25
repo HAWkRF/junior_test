@@ -58,7 +58,7 @@
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview new"></div>
                         <div class="products-list__details">
-                            <div class="products__title title">Добавить трек</div>
+                            <div class="products-list__title title">Добавить трек</div>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="products-list__item" v-if="!mobile">
                         <div class="products-list__preview"></div>
                         <div class="products-list__details">
-                            <div class="products__title">Тут песня</div>
+                            <div class="products-list__title">Тут песня</div>
                         </div>
                     </div>
                 </div>
