@@ -10721,7 +10721,8 @@ body.dark .sidebar.active .sidebar__burger {
     background: #6C5DD3;
     border-radius: 12px;
     margin-top: 175px;
-    margin-left: -650px;
+    margin-left: -260px;
+    z-index: 1;
 }
 
 .products-list__grid .products-list__item .products-list__title {
@@ -10947,6 +10948,35 @@ body.dark .products__row_head {
     background: #FFFFFF;
     box-shadow: 0px 11px 39px -14px #D1D5DD;
     border-radius: 24px;
+    z-index: 0;
+}
+
+.products__banner_text1 {
+    width: 193px;
+    height: 52px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    color: #242731;
+    margin-left: 33px;
+    margin-top: 29px;
+    z-index: 1;
+}
+
+.products__banner_text2 {
+    width: 257px;
+    height: 54px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #242731;
+    z-index: 1;
+    margin-top: 100px;
+    margin-left: -192px;
 }
 
 .products__item {
