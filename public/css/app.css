@@ -10726,9 +10726,7 @@ body.dark .sidebar.active .sidebar__burger {
     z-index: 1;
 }
 
-.products__banner_img-guitar {
-    /* background-image: url('/public/img/shutterstock.svg'); */
-}
+.products__banner_img-guitar {}
 
 .imgSong {
     Width: 132px;
