@@ -10718,6 +10718,7 @@ body.dark .sidebar.active .sidebar__burger {
     padding: 13px;
     width: 163px;
     height: 47px;
+    cursor: pointer;
     background: #6C5DD3;
     border-radius: 12px;
     margin-top: 175px;
