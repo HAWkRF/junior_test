@@ -50,11 +50,13 @@
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block-find">
                     <img class="imgSong" :src="this.iconSong"/>
-                    <p class="link-tik-tok">Ссылка на звук в TikTok</p>
+                    <p class="form__link-tik-tok">Ссылка на звук в TikTok</p>
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
-                    <p class="title-song">Название</p>
+                    <p class="form__title-song">Название</p>
                     <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required="" />
+                    <p class="form__singer">Исполнитель</p>
                     <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required="" />
+                    <p class="form__album">Альбом</p>
                     <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" required="" />
                     <button class="btn btn-lg btn-primary btn-block my-4" @click="addMusic(title, nickname, album, iconSong, val)">Добавить</button>
                 </div>
