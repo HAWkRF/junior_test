@@ -10730,6 +10730,37 @@ body.dark .sidebar.active .sidebar__burger {
     /* background-image: url('/public/img/shutterstock.svg'); */
 }
 
+.imgSong {
+    Width: 132px;
+    Height: 132px;
+    border-radius: 150px;
+    margin-bottom: 55px;
+}
+
+.link-tik-tok {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    color: #B2B3BD;
+    z-index: 1;
+    margin-right: 130px;
+    margin-bottom: -0px;
+}
+
+.title-song {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    color: #B2B3BD;
+    margin-right: 220px;
+    margin-bottom: -1px;
+    z-index: 1;
+}
+
 .products-list__grid .products-list__item .products-list__title {
     font-family: Inter;
     font-style: normal;
@@ -12850,6 +12881,15 @@ body.dark .form-control:focus {
 .form-block {
     width: 80%;
     margin: 30px auto 0;
+}
+
+.form-block-find {
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+.form-block-find input {
+    /* margin-bottom: 42px; */
 }
 
 .form-block.alt {
