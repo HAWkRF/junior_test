@@ -10726,6 +10726,10 @@ body.dark .sidebar.active .sidebar__burger {
     z-index: 1;
 }
 
+.products__banner_img-guitar {
+    /* background-image: url('/public/img/shutterstock.svg'); */
+}
+
 .products-list__grid .products-list__item .products-list__title {
     font-family: Inter;
     font-style: normal;
