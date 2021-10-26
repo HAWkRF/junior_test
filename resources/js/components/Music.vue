@@ -39,7 +39,7 @@
                 <div class="form-block">
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
                     <p class="form-tip text-danger" v-if="error" v-html="error" />
-                    <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Найти трек' : 'Введите ссылку на трек'" />
+                    <button class="btn btn-lg btn-primary btn-block my-4" @click="getMusic(val)" :disabled="!val" v-if="!waiting" v-html="val ? 'Добавить' : 'Введите ссылку на трек'" />
                     <div class="loading" :class="{active: waiting}" />
                     <p class="form-tip" v-if="waiting" v-html="'Ищем трек, это займет от 5 до 10 секунд'" />
                 </div>
