@@ -23,9 +23,10 @@
                         <p class="products__banner_text1">Загрузи свой первый трек</p>
                         <p class="products__banner_text2">Твои будущие фанаты ждут! Жми<br>на кнопку «добавить трек» и переходи к продвижению прямо сейчас.</p>
                         <div class="products__banner-add-track" @click="openMusicModal" v-if="!mobile">
-                        <div class="products__preview new"></div>
-                        <img class="products__banner-img-guitar" src="/public/img/shutterstock.svg">
-                        <!-- <img class="products__banner_img-guitar" src="../../../public/img/shutterstock.svg"> -->
+                        <!-- <div class="products__preview new"></div> -->
+                        <img class="products__banner-button-plus" :src="url + 'img/add_new_track.svg'" alt="">
+                        <img class="products__banner-img-bg-guitar" :src="url + 'img/bg-img-guitar.svg'" alt="">
+                        <img class="products__banner-img-guitar" :src="url + 'img/shutterstock.png'" alt="">
                         <div class="products__details">
                             <div class="products__title">Добавить трек</div>
                         </div>

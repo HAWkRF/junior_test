@@ -10726,7 +10726,11 @@ body.dark .sidebar.active .sidebar__burger {
     z-index: 1;
 }
 
-.products__banner-img-guitar {}
+.products__banner .products__banner-img-guitar {
+    margin-left: -400px;
+    margin-bottom: 147px;
+    z-index: 1;
+}
 
 .imgSong {
     Width: 132px;
@@ -10851,7 +10855,19 @@ body.dark .products__grid .products__item {
     font-size: 14px;
     line-height: 20px;
     color: #FFF;
-    margin-left: -60px;
+    margin-left: -905px;
+    z-index: 2;
+}
+
+.products__banner .products__banner-button-plus {
+    margin-right: 51px;
+    z-index: 2;
+}
+
+.products__banner .products__banner-img-bg-guitar {
+    margin-bottom: 150px;
+    margin-left: 320px;
+    z-index: 0;
 }
 
 .products-list>.products__title {
@@ -11068,7 +11084,7 @@ body.dark .products__row_head {
 }
 
 .products__preview .new {
-    background: no-repeat url("../img/add_track.svg") center/contain;
+    /* background: no-repeat url("../img/add_track.svg") center/contain; */
 }
 
 .products-list__preview {
