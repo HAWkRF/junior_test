@@ -50,7 +50,7 @@
         <b-modal id="music-modal-find" centered hide-footer>
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block-find">
-                    <img class="imgSong" :src="this.iconSong"/>
+                    <img class="form__img-song" :src="this.iconSong"/>
                     <p class="form__link-tik-tok">Ссылка на звук в TikTok</p>
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
                     <p class="form__title-song">Название</p>
