@@ -10711,7 +10711,7 @@ body.dark .sidebar.active .sidebar__burger {
     font-size: 19px;
 }
 
-.products__grid .products__banner_add_track {
+.products__grid .products__banner-add-track {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10726,7 +10726,7 @@ body.dark .sidebar.active .sidebar__burger {
     z-index: 1;
 }
 
-.products__banner_img-guitar {}
+.products__banner-img-guitar {}
 
 .imgSong {
     Width: 132px;
