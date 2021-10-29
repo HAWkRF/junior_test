@@ -54,7 +54,7 @@
                     <p class="form__link-tik-tok">Ссылка на звук в TikTok</p>
                     <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="this.val" required />
                     <p class="form__title-song">Название</p>
-                    <input type="text" class="form-control" placeholder="Название трека" v-bind="getTitle()" v-model="title" required />
+                    <input type="text" class="form-control" placeholder="Название трека" v-model="title" required />
                     <p class="form__singer">Исполнитель</p>
                     <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="nickname" required />
                     <p class="form__album">Альбом</p>
