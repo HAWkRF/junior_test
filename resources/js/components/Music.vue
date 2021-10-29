@@ -47,18 +47,18 @@
             </div>
         </b-modal>
 
-        <b-modal id="music-modal-find" centered hide-footer>
+        <b-modal id="music-modal-find" centered hide-footer @ok="handleSave">
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block-find">
                     <img class="form__img-song" :src="this.iconSong"/>
                     <p class="form__link-tik-tok">Ссылка на звук в TikTok</p>
-                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required="" />
+                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required />
                     <p class="form__title-song">Название</p>
-                    <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required="" />
+                    <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required />
                     <p class="form__singer">Исполнитель</p>
-                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required="" />
+                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required />
                     <p class="form__album">Альбом</p>
-                    <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" required="" />
+                    <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" />
                     <button class="btn btn-lg btn-primary btn-block my-4" @click="addMusic(title, nickname, album, iconSong, val)">Добавить</button>
                 </div>
             </div>
@@ -120,6 +120,11 @@
             closeMusicFindModal() {
                 this.waiting = this.error = false;
                 this.$bvModal.hide('music-modal-find');
+            },
+
+            handleSave(event) {
+                event.preventDefault();
+                this.document.getElementById("music-modal-find").submit();
             },
 
             getMusicList() {
