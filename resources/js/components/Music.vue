@@ -52,13 +52,13 @@
                 <div class="form-block-find">
                     <img class="form__img-song" :src="this.iconSong"/>
                     <p class="form__link-tik-tok">Ссылка на звук в TikTok</p>
-                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="val" required />
+                    <input type="text" class="form-control" placeholder="Ссылка на звук в TikTok" v-model="this.val" required />
                     <p class="form__title-song">Название</p>
-                    <input type="text" class="form-control" placeholder="Название трека" v-model="this.title" required />
+                    <input type="text" class="form-control" placeholder="Название трека" v-bind="getTitle()" v-model="title" required />
                     <p class="form__singer">Исполнитель</p>
-                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="this.nickname" required />
+                    <input type="text" class="form-control" placeholder="Исполнитель трека" v-model="nickname" required />
                     <p class="form__album">Альбом</p>
-                    <input type="text" class="form-control" placeholder="Альбом трека" v-model="this.album" />
+                    <input type="text" class="form-control" placeholder="Альбом трека" v-model="album" />
                     <button class="btn btn-lg btn-primary btn-block my-4" @click="addMusic(title, nickname, album, iconSong, val)">Добавить</button>
                 </div>
             </div>
@@ -149,6 +149,8 @@
                     this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
                     this.album = response.data.music.album;
                     this.iconSong = response.data.music.coverMedium;
+
+                    this.titleInput = this.title;
 
                     this.error = null;
                 }).catch(error => {
