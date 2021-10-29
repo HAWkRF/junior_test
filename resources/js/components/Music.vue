@@ -150,7 +150,6 @@
                     this.album = response.data.music.album;
                     this.iconSong = response.data.music.coverMedium;
 
-                    this.titleInput = this.title;
 
                     this.error = null;
                 }).catch(error => {
