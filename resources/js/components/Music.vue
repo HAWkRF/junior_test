@@ -145,8 +145,8 @@
                     this.closeMusicModal();
                     this.openMusicFindModal();
                     console.log(response);
+                    
                     this.music = response.data.music;
-
                     this.title = this.music.title;
                     this.nickname = this.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
                     this.album = this.music.album;
