@@ -125,6 +125,7 @@
             handleSave(event) {
                 event.preventDefault();
                 this.document.getElementById("music-modal-find").submit();
+                console.log("func handleSave");
             },
 
             getMusicList() {
@@ -145,11 +146,11 @@
                     this.openMusicFindModal();
                     console.log(response);
                     this.music = response.data.music;
-                    this.title = response.data.music.title;
-                    this.nickname = response.data.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
-                    this.album = response.data.music.album;
-                    this.iconSong = response.data.music.coverMedium;
 
+                    this.title = this.music.title;
+                    this.nickname = this.music.authorName.replace(/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g, '').trim();
+                    this.album = this.music.album;
+                    this.iconSong = this.music.coverMedium;
 
                     this.error = null;
                 }).catch(error => {
