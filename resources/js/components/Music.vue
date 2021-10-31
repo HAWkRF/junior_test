@@ -148,13 +148,6 @@
             getMusicList() {
                 axios.get(GET_MUSIC_LIST).then(response => {
                     this.items = response.data;
-
-                    if (this.items.length == 0) {
-                        console.log("items - null")
-                    }
-                    else {
-                        console.log("items not null");
-                    }
                 });
             },
 
