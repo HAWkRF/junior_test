@@ -16,6 +16,7 @@
             </div>
         </div>
 
+    <template v-if="this.items.length == 0">
         <div class="page__row page__row_border">
             <div class="page__col">
                 <div class="products__grid">
@@ -47,7 +48,7 @@
             </div>
         </b-modal>
 
-        <b-modal id="music-modal-find" centered hide-footer @ok="handleSave">
+        <b-modal id="music-modal-find" centered hide-footer>
             <div class="modal-center d-flex flex-column text-center mx-auto">
                 <div class="form-block-find">
                     <img class="form__img-song" :src="this.iconSong"/>
@@ -63,6 +64,24 @@
                 </div>
             </div>
         </b-modal>
+    </template>
+
+    <template v-else>
+            <div class="page__row page__row_border">
+                <div class="page__col">
+                    <div class="products-list__grid">
+                        <div class="products-list__item" v-for="item in items" :key="item.id" v-if="!mobile">
+                            <div class="products-list__preview"></div>
+                            <div class="products-list__details">
+                                <p class="products-list__songer">{{ item.author }}</p>
+                                <p class="products-list__song_title">{{ item.title }}</p>
+                                <img :src="item.image" class="products-list__songer-icon"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
     </div>
 </template>
 
@@ -82,7 +101,7 @@
                 music: null,
                 error: null,
                 waiting: false,
-                items: null,
+                items: [], // список песен
 
                 music: {},
                 title: null, // название песни
@@ -122,15 +141,20 @@
                 this.$bvModal.hide('music-modal-find');
             },
 
-            handleSave(event) {
-                event.preventDefault();
-                this.document.getElementById("music-modal-find").submit();
-                console.log("func handleSave");
+            refreshMusicList () {
+                this.getMusicList();
             },
 
             getMusicList() {
                 axios.get(GET_MUSIC_LIST).then(response => {
                     this.items = response.data;
+
+                    if (this.items.length == 0) {
+                        console.log("items - null")
+                    }
+                    else {
+                        console.log("items not null");
+                    }
                 });
             },
 
@@ -174,6 +198,7 @@
                     this.waiting = false;
                     this.error = null;
                     this.closeMusicFindModal();
+                    this.refreshMusicList();
                     
                  }).catch (error => {
                     console.log(error);
