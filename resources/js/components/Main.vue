@@ -70,6 +70,7 @@
                 <div class="products-list__grid">
                     <div class="products-list__item" v-for="item in items" :key="item.id" v-if="!mobile">
                         <div class="products-list__preview"></div>
+                        <img :src="url + 'img/red-circle.svg'" alt="" class="products-list__circle">
                         <div class="products-list__details">
                             <p class="products-list__songer">{{ item.author }}</p>
                             <p class="products-list__song_title">{{ item.title }}</p>
